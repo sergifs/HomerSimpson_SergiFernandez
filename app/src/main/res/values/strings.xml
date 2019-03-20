@@ -2,4 +2,9 @@
     <string name="app_name">HomerSimpson_SergiFernandez</string>
     <string name="t_tol_dels_simpsons">Títol dels Simpsons</string>
     <string name="homer_simpson">Homer Simpson</string>
+    <string name="donut">Donut</string>
+    <string name="ull">Ull</string>
+    <string name="engranatge_vermell">Engranatge vermell</string>
+    <string name="engranatge_verd">Engranatge verd</string>
+    <string name="engranatge_blau">Engranatge blau</string>
 </resources>
