@@ -1,6 +1,7 @@
 package cat.copernic.sergifsellares.homersimpson_sergifernandez;
 
 import android.graphics.drawable.AnimationDrawable;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -14,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageView theSimpsons, homer, ull, donut, engranatge_vermell, engranatge_verd, engranatge_blau;
     private Animation rotate_vermell, rotate_verd, rotate_blau, rotate_donut, translate_donut, rotate_ull;
     private AnimationSet donut_animation;
+    private MediaPlayer mPlayer;
     private Boolean isVisible = false;
 
     @Override
@@ -28,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         engranatge_vermell = findViewById(R.id.engranatge_vermell);
         engranatge_verd = findViewById(R.id.engranatge_verd);
         engranatge_blau = findViewById(R.id.engranatge_blau);
+        mPlayer = MediaPlayer.create(this, R.raw.the_simpsons);
 
         //Titol
         ((AnimationDrawable) theSimpsons.getDrawable()).start();
@@ -78,6 +81,17 @@ public class MainActivity extends AppCompatActivity {
                     donut.startAnimation(donut_animation);
                     ull.startAnimation(rotate_ull);
                     isVisible = true;
+                }
+            }
+        });
+
+        donut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mPlayer.isPlaying()) {
+                    mPlayer.pause();
+                } else {
+                    mPlayer.start();
                 }
             }
         });
